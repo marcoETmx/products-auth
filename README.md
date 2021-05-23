@@ -1,7 +1,12 @@
+# API Products
+## Descripción
 
+Una API de productos con sistema de autenticación y autorización
 
-## Description
+## Requisitos
 
+- npm
+- docker
 ## Installation
 
 ```bash
@@ -11,6 +16,8 @@ $ npm install
 ## Running the app
 
 ```bash
+$ docker-compose up -d mongo
+
 # development
 $ npm run start
 

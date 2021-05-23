@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import * as Joi from 'join';
+import * as Joi from 'joi';
 
 import { AppController } from './app.controller';
 import { ConfigModule } from '@nestjs/config';
