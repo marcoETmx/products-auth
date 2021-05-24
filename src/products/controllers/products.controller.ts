@@ -9,8 +9,11 @@ import {
   Delete,
   HttpStatus,
   HttpCode,
+  UseGuards
 } from '@nestjs/common';
 import { ApiTags, ApiOperation } from '@nestjs/swagger';
+import { JwtAuthGuard } from '../../auth/guards/jwt-auth-guard';
+import { Public } from '../../auth/decorators/public.decorator';
 
 import { MongoIdPipe } from './../../common/mongo-id.pipe';
 import {
@@ -20,17 +23,20 @@ import {
 } from '../dtos/products.dtos';
 import { ProductsService } from './../services/products.service';
 
+@UseGuards(JwtAuthGuard)
 @ApiTags('products')
 @Controller('products')
 export class ProductsController {
   constructor(private productsService: ProductsService) {}
 
+  @Public()
   @Get()
   @ApiOperation({ summary: 'List of products' })
   getProducts(@Query() params: FilterProductsDto) {
     return this.productsService.findAll(params);
   }
 
+  @Public()
   @Get(':productId')
   @HttpCode(HttpStatus.ACCEPTED)
   getOne(@Param('productId', MongoIdPipe) productId: string) {
