@@ -12,7 +12,7 @@ import config from '../config';
         const { connection, user, password, host, port, dbName } =
           configService.mongo;
         return {
-          uri: `${connection}://${host}:${port}`,
+          uri: `${connection}://${host}`,
           user,
           pass: password,
           dbName,
@@ -27,7 +27,7 @@ import config from '../config';
       useFactory: async (configService: ConfigType<typeof config>) => {
         const { connection, user, password, host, port, dbName } =
           configService.mongo;
-        const uri = `${connection}://${user}:${password}@${host}:${port}/?authSource=admin&readPreference=primary`;
+        const uri = `${connection}://${user}:${password}@${host}/?authSource=admin&readPreference=primary`;
         const client = new MongoClient(uri);
         await client.connect();
         const database = client.db(dbName);
