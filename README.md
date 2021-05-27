@@ -1,7 +1,19 @@
 # API Products
 ## Descripción
 
-Una API de productos con sistema de autenticación y autorización
+Una API de productos con sistema de autenticación y autorización, el cual permite realizar el login por medio de email/password o una cuenta de Google (solo para usuarios con rol Customer).
+
+La API te permite administrar
+- Productos
+- Usuarios
+
+Existen dos roles para los usuarios:
+- Customer
+- Admin
+
+Puedes acceder a la documentación [en este enlace](https://thawing-taiga-05133.herokuapp.com/docs/#/)
+
+Para realizar el login con google [en este enlace](https://thawing-taiga-05133.herokuapp.com/auth/)
 
 ## Requisitos
 
@@ -12,6 +24,10 @@ Una API de productos con sistema de autenticación y autorización
 ```bash
 $ npm install
 ```
+
+### Variables de entorno
+
+Se deberan de crear un archivo .env en base al archivo .env.example, remplazando y colocando los valores de utilizar.
 
 ## Running the app
 

@@ -10,6 +10,6 @@ export class AppService {
     @Inject(config.KEY) private configService: ConfigType<typeof config>,
   ) {}
   getHello(): string {
-    return 'Hello World!';
+    return 'Bienvenido a API Products puedes acceder a la documentación en la siguiente liga https://github.com/marcoETmx/products-auth/blob/main/README.md';
   }
 }
